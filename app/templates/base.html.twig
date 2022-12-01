@@ -14,6 +14,12 @@
         {% endblock %}
     </head>
     <body>
+        <header style ="display: flex; flex-direction: row; justify-content: space-between; align-items: center; background: #9b59b6;">
+            <span>ma super app</span>
+            <ul>
+                <a href="{{ path('inscription') }}">Inscription</a>
+            </ul>
+        </header>
         {% block body %}{% endblock %}
     </body>
 </html>
