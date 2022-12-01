@@ -26,7 +26,9 @@
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.48",
-        "symfony/validator": "6.1.*"
+        "symfony/stopwatch": "6.1.*",
+        "symfony/validator": "6.1.*",
+        "symfony/web-profiler-bundle": "6.1.*"
     },
     "config": {
         "allow-plugins": {
