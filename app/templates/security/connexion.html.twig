@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion !{% endblock %}
+
+{% block body %}
+
+    {% if error %}
+        <div> {{ error.messageKey }} </div>
+    {% endif %}
+    
+
+    <form action="{{ path('connexion') }}" method="POST">
+
+        <h3>Connexion</h3>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="_username" value="{{ username }}">
+
+        <label for="password">Password</label>
+        <input type="password" name="_password" id="password">
+
+        <button>Connexion</button>
+    </form>
+
+{% endblock %}
