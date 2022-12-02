@@ -38,7 +38,8 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        # ici toutes les url commencant par "profile" vont être ok pour aller à la page profile
+        - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
     security:
