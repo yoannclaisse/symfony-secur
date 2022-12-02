@@ -6,7 +6,8 @@
 
     {% if error %}
 
-        <div> {{ error.messageKey }} </div>
+        {# le  " | trans ... " permet de traiter les erreurs via le bundle translation #}
+        <div> {{ error.messageKey | trans(error.messageData, 'security')}} </div>
         
     {% endif %}
     

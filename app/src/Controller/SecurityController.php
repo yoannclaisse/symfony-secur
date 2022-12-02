@@ -52,6 +52,11 @@ class SecurityController extends AbstractController
         // stock l'user qui va se connecter
         $username = $authenticationUtils->getLastUsername();
 
+        // check errors
+        // if($error) {
+        //     dd($error->getMessageKey());
+        // }
+
         return $this->render('security/connexion.html.twig', [
             'error' => $error,
             'username' => $username
