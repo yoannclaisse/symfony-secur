@@ -14,7 +14,7 @@ class ProfileController extends AbstractController
 
         // Autre méthode pour le contrôle d'accès : depuis le controle ...
         // $this->denyAccessUnlessGranted('ROLE_USER');
-        $this->isGranted('IS_AUTHENTICATED_FULLY');
+        // $this->isGranted('IS_AUTHENTICATED_FULLY');
 
 
         return $this->render('profile/index.html.twig', [
