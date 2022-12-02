@@ -21,6 +21,9 @@ security:
                 login_path: connexion
                 # post
                 check_path: connexion
+            # Configuration du logout
+            logout:
+                path: logout
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
