@@ -16,6 +16,9 @@ security:
         main:
             lazy: true
             provider: app_user_provider
+            # add this line for brute force 
+            login_throttling:
+                max_attempts: 2
             form_login:
                 # get
                 login_path: connexion
