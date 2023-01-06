@@ -27,6 +27,8 @@ security:
                 login_path: connexion
                 # post
                 check_path: connexion
+                # csrf
+                enable_csrf: true
             # Configuration du logout
             logout:
                 path: logout

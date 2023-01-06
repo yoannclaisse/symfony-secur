@@ -23,6 +23,8 @@
         <label>
             <input type="checkbox" name="_remember_me"> Remember me
         </label>
+        {# ajouter d'un input pour le token csrf #}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
         <button>Connexion</button>
     </form>
