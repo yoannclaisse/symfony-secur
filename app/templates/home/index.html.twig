@@ -3,9 +3,17 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         Bonjour {{ app.user.name }}
     {% else %}
         Bonjour
     {% endif %}
+
+    {# Ces lignes du dessous sont si il n'y a pas le remember me #}
+    {# {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        Bonjour {{ app.user.name }}
+    {% else %}
+        Bonjour
+    {% endif %} #}
 {% endblock %}

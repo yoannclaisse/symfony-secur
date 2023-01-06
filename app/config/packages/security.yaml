@@ -15,6 +15,9 @@ security:
             security: false
         main:
             lazy: true
+            # Pour se souvenir de l'user en mode remember me
+            remember_me:
+                secret: '%kernel.secret%'
             provider: app_user_provider
             # add this line for brute force 
             login_throttling:
