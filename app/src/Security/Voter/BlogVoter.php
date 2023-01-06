@@ -15,6 +15,8 @@ class BlogVoter extends Voter
 
     protected function supports(string $attribute, mixed $subject): bool
     {
+        // dump($attribute);
+        // dd($subject);
         // replace with your own logic
         // https://symfony.com/doc/current/security/voters.html
         // On remplace après le self:: par la const EDIT
@@ -22,8 +24,11 @@ class BlogVoter extends Voter
             && $subject instanceof \App\Entity\Blog;
     }
 
-    protected function voteOnAttribute(string $attribute, mixed $subject, TokenInterface $token): bool
+    protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token): bool
     {
+
+        // dd($token);
+
         $user = $token->getUser();
         // if the user is anonymous, do not grant access
         if (!$user instanceof UserInterface) {
@@ -35,6 +40,9 @@ class BlogVoter extends Voter
             case self::EDIT:
                 // logic to determine if the user can EDIT
                 // return true or false
+                if ($subject->getAuthor() === $user) {
+                    return true;
+                }
                 break;
             // On enlève cela nous verrons ensuite pourquoi ...
             // case self::VIEW:

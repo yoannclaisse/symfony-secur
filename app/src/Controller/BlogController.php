@@ -26,9 +26,10 @@ class BlogController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function edit(Blog $blog): Response
     {
-        // Utiliser le voter et on verifier une règle, on met ce que l'ont veut et là c'est BLOG_EDIT
+        // Utiliser le voter et on verifier une règle, on met ce que l'ont veut et là c'est BLOG_EDIT (il faut qu'il se retrouve dans le voter)
         // Le support du voter continu suivant si c'est true ou false
-        $this->denyAccessUnlessGranted('BLOG_EDIT');
+        // Le $blog correspond au $subject dans le voter pour rentrer dans la condition du support
+        $this->denyAccessUnlessGranted('BLOG_EDIT', $blog);
 
         $user = $this->getUser();
 
