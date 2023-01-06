@@ -8,14 +8,17 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class BlogVoter extends Voter
 {
-    public const EDIT = 'POST_EDIT';
-    public const VIEW = 'POST_VIEW';
+    // Ici on met BLOG_EDIT pour s'adapter à notre code
+    public const EDIT = 'BLOG_EDIT';
+    // On enlève le view pck pas besoin
+    // public const VIEW = 'POST_VIEW';
 
     protected function supports(string $attribute, mixed $subject): bool
     {
         // replace with your own logic
         // https://symfony.com/doc/current/security/voters.html
-        return in_array($attribute, [self::EDIT, self::VIEW])
+        // On remplace après le self:: par la const EDIT
+        return in_array($attribute, [self::EDIT, self::EDIT])
             && $subject instanceof \App\Entity\Blog;
     }
 
@@ -33,10 +36,11 @@ class BlogVoter extends Voter
                 // logic to determine if the user can EDIT
                 // return true or false
                 break;
-            case self::VIEW:
-                // logic to determine if the user can VIEW
-                // return true or false
-                break;
+            // On enlève cela nous verrons ensuite pourquoi ...
+            // case self::VIEW:
+            //     // logic to determine if the user can VIEW
+            //     // return true or false
+            //     break;
         }
 
         return false;
